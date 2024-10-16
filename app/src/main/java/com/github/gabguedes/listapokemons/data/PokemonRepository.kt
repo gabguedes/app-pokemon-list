@@ -4,6 +4,7 @@ import androidx.paging.Pager
 import androidx.paging.PagingConfig
 import androidx.paging.liveData
 import com.github.gabguedes.listapokemons.data.api.PokeApiService
+import com.github.gabguedes.listapokemons.data.api.model.Pokemon
 
 class PokemonRepository(private val apiService: PokeApiService) {
     fun getPokemonList() = Pager(
@@ -14,4 +15,5 @@ class PokemonRepository(private val apiService: PokeApiService) {
         ),
         pagingSourceFactory = { PokemonPagingSource(apiService) }
     ).liveData
+
 }
